@@ -193,3 +193,9 @@ footer p {
         font-size: 17px;
     }
 }
+
+@media (min-width: 1024px) {
+    .painel-grid {
+        width: 70%;
+    }
+}
