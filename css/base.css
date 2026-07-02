@@ -1,36 +1,48 @@
-html {
-    scroll-behavior: smooth;
+header h1 {
+    font-family: var(--fonte-titulo);
+    font-size: 2.4rem;
+    color: var(--cor-primaria);
+    margin: 0 0 8px 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
-body {
-    background-color: var(--cor-fundo);
-    color: var(--cor-texto);
-    font-family: var(--fonte-corpo);
-    font-size: 16px;
-    line-height: 1.8;
+header p {
+    color: var(--cor-texto-suave);
+    font-size: 1rem;
+    font-style: italic;
+    margin: 0;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    list-style: none;
     margin: 0;
     padding: 0;
+    flex-wrap: wrap;
 }
 
-header {
-    background-color: var(--cor-fundo-alt);
-    border-bottom: 2px solid var(--cor-primaria);
-    text-align: center;
-    padding: 40px 20px;
+nav ul li a {
+    display: block;
+    font-family: var(--fonte-titulo);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--cor-texto-suave);
+    text-decoration: none;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 16px 20px;
+    transition: color 0.2s, border-bottom 0.2s;
+    border-bottom: 3px solid transparent;
 }
 
-nav {
-    background-color: var(--cor-fundo-alt);
-    border-bottom: 1px solid var(--cor-borda);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-main {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 24px;
+nav ul li a:hover {
+    color: var(--cor-primaria);
+    border-bottom: 3px solid var(--cor-primaria);
 }
 
 section {
@@ -38,13 +50,146 @@ section {
     border-bottom: 1px solid var(--cor-borda);
 }
 
-footer {
-    background-color: var(--cor-fundo-alt);
-    border-top: 1px solid var(--cor-borda);
-    text-align: center;
-    padding: 32px 20px;
-    font-size: 11px;
-    color: var(--cor-texto-suave);
+h2 {
     font-family: var(--fonte-titulo);
+    font-size: 1.9rem;
+    color: var(--cor-primaria);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 32px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--cor-borda);
+}
+
+h3 {
+    font-family: var(--fonte-titulo);
+    font-size: 1.2rem;
+    color: var(--cor-destaque);
     letter-spacing: 1px;
+    margin-top: 40px;
+    margin-bottom: 12px;
+}
+
+p {
+    color: var(--cor-texto);
+    margin-bottom: 16px;
+}
+
+ul {
+    color: var(--cor-texto);
+    padding-left: 24px;
+    margin-bottom: 16px;
+}
+
+ul li {
+    margin-bottom: 8px;
+}
+
+em {
+    color: var(--cor-destaque);
+}
+
+footer p {
+    color: var(--cor-texto-suave);
+    margin-bottom: 4px;
+}
+
+/*responsividade em diff telas */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    nav ul {
+        gap: 0;
+    }
+
+    nav ul li a {
+        padding: 14px 12px;
+        font-size: 0.85rem;
+    }
+
+    .figura {
+        width: 100%;
+    }
+
+    .galeria figure {
+        width: 45%;
+    }
+
+    .form-container {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .form-figura img {
+        max-height: 300px;
+        object-fit: cover;
+    }
+
+    .painel-grid {
+        width: 100% !important;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}
+
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.4rem;
+    }
+
+    header p {
+        font-size: 0.85rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav ul li a {
+        padding: 10px 10px;
+        font-size: 0.8rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+
+    .galeria figure {
+        width: 100%;
+    }
+
+    main {
+        padding: 0 16px;
+    }
+
+    .banner-animado p {
+        font-size: 1.2rem;
+    }
+
+    .form-grid fieldset {
+        padding: 16px;
+    }
+
+    .painel-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 10px;
+    }
+}
+
+
+@media (min-width: 1200px) {
+    main {
+        max-width: 1000px;
+    }
+
+    body {
+        font-size: 17px;
+    }
 }
